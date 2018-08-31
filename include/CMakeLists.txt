@@ -1,7 +1,5 @@
 set(INSTALL_FILES
     udev++.hpp
-    enumeration.hpp
-    udev.hpp
 )
 
 set(INSTALL_DIRECTORIES

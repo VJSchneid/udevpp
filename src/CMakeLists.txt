@@ -5,3 +5,5 @@ add_library(udev++
     $<TARGET_OBJECTS:udev++_udev>
     $<TARGET_OBJECTS:udev++_enumeration>
 )
+
+install(TARGETS udev++ DESTINATION lib)
