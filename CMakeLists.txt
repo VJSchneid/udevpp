@@ -14,3 +14,8 @@ include_directories(
 )
 
 add_subdirectory(src)
+
+option(BUILD_EXAMPLES "build examples")
+if(BUILD_EXAMPLES)
+    add_subdirectory(examples)
+endif()
