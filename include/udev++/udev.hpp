@@ -4,6 +4,7 @@
 
 namespace uv {
     class enumeration;
+    class device;
 
     class udev {
     public:
@@ -20,6 +21,7 @@ namespace uv {
         inline void init_base() noexcept(false);
 
         friend uv::enumeration;
+        friend uv::device;
 
         ::udev *base;
 
