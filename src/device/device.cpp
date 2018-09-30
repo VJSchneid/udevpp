@@ -48,6 +48,10 @@ namespace uv {
         return value;
     }
 
+    bool device::set_sysattribute(const char *name, const char *value) noexcept {
+        return udev_device_set_sysattr_value(base, name, const_cast<char*>(value)) == 0;
+    }
+
     device device::make_from_syspath(const char *syspath, const udev &core) {
         auto dev = udev_device_new_from_syspath(core.base, syspath);
         return device(core, dev);

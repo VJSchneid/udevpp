@@ -28,6 +28,9 @@ namespace uv {
             return core;
         }
 
+        bool scan_devices() noexcept;
+        bool scan_subsystems() noexcept;
+
         Iterator begin();
         Iterator end();
 

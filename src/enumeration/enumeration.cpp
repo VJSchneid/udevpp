@@ -47,4 +47,23 @@ namespace uv {
             std::bad_alloc();
         }
     }
+
+    bool enumeration::scan_devices() noexcept {
+        return udev_enumerate_scan_devices(base) == 0;
+    }
+
+    bool enumeration::scan_subsystems() noexcept {
+        return udev_enumerate_scan_subsystems(base) == 0;
+    }
+
+
+    enumeration::Iterator enumeration::begin() {
+        udev_list_entry *list_entry;
+        auto devices = udev_enumerate_get_list_entry(base);
+        return Iterator(devices);
+    }
+
+    enumeration::Iterator enumeration::end() {
+        return Iterator(nullptr);
+    }
 }

@@ -16,6 +16,7 @@ namespace uv {
 
         const char *get_sysname() const noexcept;
         std::optional<const char *> get_sysattribute(const char *name) const noexcept;
+        bool set_sysattribute(const char *name, const char *value) noexcept;
 
         static device make_from_syspath(const char *syspath, const udev &core = udev());
 
