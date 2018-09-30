@@ -5,7 +5,7 @@ namespace uv::enumeration_base::match {
     subsystem::subsystem(const char *subsystem): value(subsystem) {}
 
     subsystem &subsystem::operator!() {
-        nomatch != nomatch;
+        nomatch = !nomatch;
         return *this;
     }
 
@@ -15,7 +15,7 @@ namespace uv::enumeration_base::match {
             :sysattr(sysattr), value(value) {}
 
     sys_attribute &sys_attribute::operator!() {
-        nomatch != nomatch;
+        nomatch = !nomatch;
         return *this;
     }
 
